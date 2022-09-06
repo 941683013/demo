@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.AccountMapper">
+    <insert id="insertAccount" >
+        insert into account(email, cypher) values(#{email}, #{cypher})
+    </insert>
+
+    <select id="selectAccountByEmail" resultType="String">
+        select id from account where email=#{email}
+    </select>
+
+    <select id="login" resultType="String" >
+        select id from account where (email=#{email} or id=#{id}) and cypher=#{cypher}
+    </select>
+
+    <update id="updateAccount" >
+        update account set cypher=#{cypher} where id=#{id}
+    </update>
+</mapper>

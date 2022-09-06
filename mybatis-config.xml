@@ -8,7 +8,7 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://127.0.0.1:3306/new_database"/>
+                <property name="url" value="jdbc:mysql://127.0.0.1:3306/appdata"/>
                 <!-- 用户名               -->
                 <property name="username" value="root"/>
                 <!-- 密码              -->
@@ -20,6 +20,8 @@
     </environments>
     <mappers>
         <mapper resource="UserMapper.xml"/>
+        <mapper resource="AccountMapper.xml"/>
+        <mapper resource="UserInfoMapper.xml"/>
     </mappers>
 </configuration>
 
